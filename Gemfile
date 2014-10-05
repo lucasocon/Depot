@@ -45,4 +45,4 @@ group :production do
 end
 
 gem 'thin'
-gem 'therubyracer'
+
