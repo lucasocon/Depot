@@ -1,23 +1,23 @@
-require 'spec_helper'
+  require 'spec_helper'
 
-describe Product do 
+describe Product do
 	it "has a valid factory" do
 		FactoryGirl.create(:product).should be_valid
 	end
-	it "is invalid without a title" do 
-		FactoryGirl.build(:product, title: nil).should_not be_valid 
-	end 
+	it "is invalid without a title" do
+		FactoryGirl.build(:product, title: nil).should_not be_valid
+	end
 	it "is invalid without description" do
-		FactoryGirl.build(:product, description: nil).should_not be_valid 
+		FactoryGirl.build(:product, description: nil).should_not be_valid
 	end
 
-	it "is invalid without image_url" do	
-		FactoryGirl.build(:product, image_url: nil).should_not be_valid 
+	it "is invalid without image_url" do
+		FactoryGirl.build(:product, image_url: nil).should_not be_valid
 	end
 
 	it "is invalid without price" do
 		FactoryGirl.build(:product, price: nil).should_not be_valid
-	end 
+	end
 
 	it "is a valid numeracility" do
 		FactoryGirl.build(:product, price: 0.02).should be_valid
@@ -25,7 +25,7 @@ describe Product do
 
 	it "is invalid numeracility" do
 		FactoryGirl.build(:product, price: "hola").should_not be_valid
-	end 
+	end
 
 	it "have a unique title" do
 		new = FactoryGirl.create(:product, title: "duplicated")

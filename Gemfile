@@ -9,11 +9,11 @@ gem 'rails', '3.2.2'
 
 group :development do
 	gem 'sqlite3'
-end	
+end
 
-group :development, :test do 
-	gem 'rspec-rails' 
-	gem 'factory_girl_rails' 
+group :development, :test do
+	gem 'rspec-rails'
+	gem 'factory_girl_rails'
 end
 
 group :production do
@@ -32,6 +32,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
