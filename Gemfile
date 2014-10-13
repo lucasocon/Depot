@@ -34,6 +34,8 @@ end
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'turbolinks'
+gem 'bcrypt-ruby', '~> 3.0.0'
+
 
 
 # To use ActiveModel has_secure_password
