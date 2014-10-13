@@ -33,6 +33,7 @@ end
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'turbolinks'
 
 
 # To use ActiveModel has_secure_password
