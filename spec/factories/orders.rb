@@ -1,10 +1,11 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
-  factory :order do
-    name "MyString"
-    address "MyText"
-    email "MyString"
-    pay_type "MyString"
+
+  factory :order do |f|
+
+    f.name "Order"
+    f.address "my address 1234"
+    f.email "my@order.com"
+    f.pay_type "Check"
+    
   end
 end
