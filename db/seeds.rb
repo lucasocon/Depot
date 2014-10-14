@@ -15,3 +15,20 @@ Product.create!(title: 'Programming Ruby 1.9 & 2.0',
 		</p>},
 	image_url: 'ruby.jpg',
 	price:49.95)
+Product.create!(title: 'CoffeeScript',
+	description:
+	%{<p>
+		CoffeeScript is a little language that compiles into JavaScript. 
+		Underneath that awkward Java-esque patina, JavaScript has always had a gorgeous heart.
+		</p>},
+	image_url: 'cd.jpg',
+	price:50.95)
+Product.create!(title: 'Agile Web Development with Rails 4',
+	description:
+	%{<p>
+		Ruby on Rails helps you produce high-quality, beautiful-looking web applications quickly. 
+		You concentrate on creating the application, and Rails takes care of the details.
+		Tens of thousands of developers have used this award-winning book to learn Rails. 
+		</p>},
+	image_url: 'rails.png',
+	price:43.45)
