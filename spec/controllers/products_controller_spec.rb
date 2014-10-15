@@ -43,7 +43,7 @@ require 'spec_helper'
 			it "saves the new product" do
 				expect{
 					post :create, product: FactoryGirl.attributes_for(:product)
-				}.to change (Product, :count).by(1)
+				}.to change(Product, :count).by(1)
 			end
 			it "redirects to the created product" do
 				post :create, product: FactoryGirl.attributes_for(:product)
@@ -74,7 +74,7 @@ require 'spec_helper'
 		context "atributos validos" do
 			it "encontrar el producto a editar" do
 				put :update, id: @product, product: FactoryGirl.attributes_for(:product)
-				assigns(:product),should eq(@product)
+				assigns(:product).should eq(@product)
 			end
 			it "cambia atributos de @product" do
 				put :update, id: @product, product: FactoryGirl.attributes_for(:product, title: "Lord of the Rings")
@@ -120,4 +120,3 @@ require 'spec_helper'
 			response.should redirect_to products_url
 		end
 	end
-end
