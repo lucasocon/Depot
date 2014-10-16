@@ -8,8 +8,8 @@
       <legend>Please Log In</legend>
  
       <div>
-        <%= label_tag :name, 'Name:' %>
-        <%= text_field_tag :name, params[:name] %>
+        <%= label_tag :email, 'Email:' %>
+        <%= text_field_tag :email, params[:email] %>
       </div>
  
       <div>
@@ -19,6 +19,9 @@
   
       <div>
         <%= submit_tag "Login" %>
+      </div>
+      <div style = "margin-top: 10px">
+        <%= link_to "Log In with Facebook.", "/auth/facebook", id: "sign_in" %></li>
       </div>
     </fieldset>
   <% end %>

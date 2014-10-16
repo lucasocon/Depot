@@ -7,12 +7,17 @@ class ApplicationController < ActionController::Base
 
   	def authorize
     	if User.count.zero?
-      		redirect_to new_user_path, notice: "Please create the first user account" 
-    	else
-      		unless User.find_by_id(session[:user_id])
-        		redirect_to login_url, notice: "Please log in" 
-      		end
-    	end
+      	redirect_to new_user_path, notice: "Please create the first user account" 
+        return
+      end
+  		
+      if user = User.find_by_id(session[:user_id])
+        unless user.admin
+          redirect_to store_url, notice: "You aren't an admin"
+        end
+      else
+        redirect_to login_url, notice: "Please log in" 
+      end
   	end
 
   	def set_i18n_locale_from_params

@@ -1,5 +1,9 @@
 Depot::Application.routes.draw do
 
+  match 'auth/:provider/callback', to: 'sessions#facebook'
+  match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'sessions#destroy', as: 'signout'
+
   get 'admin' => 'admin#index'
 
     controller :sessions do
