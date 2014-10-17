@@ -23,10 +23,6 @@
     <%= f.label :email, 'Email:' %>
     <%= f.text_field :email, size: 40 %>
   </div>
-   <div class="field">
-    <%= f.label :admin, 'Admin:' %><br />
-    <%= f.text_field :admin, size: 5 %>
-  </div>
   <div class="field">
     <%= f.label :password, 'Password:' %>
     <%= f.password_field :password, size: 40 %>
@@ -38,6 +34,11 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+    <% unless session[:user_id]  %>
+      <div style = "margin-top: 10px">
+          <%= link_to "Sign up with Facebook!", "/auth/facebook", id: "sign_in" %></li>
+    </div>
+    <% end %>
 
   </fieldset>
 <% end %>
