@@ -13,7 +13,8 @@ class ApplicationController < ActionController::Base
   		
       if user = User.find_by_id(session[:user_id])
         unless user.admin
-          redirect_to store_url, notice: "You aren't an admin"
+          redirect_to store_url, notice: "Welcome!"
+
         end
       else
         redirect_to login_url, notice: "Please log in" 
