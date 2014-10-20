@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
    skip_before_filter :authorize, only: [:new, :create]
+   before_filter :authenticate_buyer!, only: [:new, :create]
   # GET /orders
   # GET /orders.json
 include CurrentCart

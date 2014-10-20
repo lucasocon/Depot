@@ -27,6 +27,15 @@
 			</div>
 			
 			<ul>
+				<div>  
+				  <% if buyer_signed_in? %>  
+				    <li><h4 style='color: #bfb'>Signed in as <%= current_buyer.email %> </br> 
+				    <%= link_to "Sign out", destroy_buyer_session_path, :method => :delete %></h4></li>  
+				  <% else %>  
+				    <li><%= link_to "Sign up", new_buyer_registration_path %></li>   
+				    <li><%= link_to "Sign in", new_buyer_session_path %></li>  
+				  <% end %>  
+				</div>  
 				<li><a href="http://www.insignia4u.com"><%= t('.home') %></a></li>
 				<li><a href="http://www.insignia4u.com/services"><%= t('.questions') %></a></li>
 				<li><a href="http://www.insignia4u.com/projects"><%= t('.news') %></a></li>
