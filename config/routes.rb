@@ -1,6 +1,10 @@
 Depot::Application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   devise_for :buyers
+  ActiveAdmin.routes(self)
 
   match 'auth/:provider/callback', to: 'sessions#facebook'
   match 'auth/failure', to: redirect('/')

@@ -38,6 +38,7 @@ gem 'turbolinks'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'omniauth-facebook'
 gem 'devise'
+gem 'activeadmin'
 
 
 
