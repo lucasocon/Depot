@@ -1,9 +1,11 @@
 Depot::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
+  root to: 'store#index', as: 'store'
   ActiveAdmin.routes(self)
 
   devise_for :buyers
+  root to: 'store#index', as: 'store'
   ActiveAdmin.routes(self)
 
   match 'auth/:provider/callback', to: 'sessions#facebook'
