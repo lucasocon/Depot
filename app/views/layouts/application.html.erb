@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pragprog Books Online</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= controller.controller_name %>">
+	<div id="banner">
+		<%= form_tag store_path, class: 'locale' do %>
+		  <%= select_tag 'set_locale', options_for_select(LANGUAGES, I18n.locale.to_s), onchange: 'this.form.submit()' %>
+		  <%= submit_tag 'submit' %>
+		  <%= javascript_tag "$('.locale input').hide()" %>
+		  <% end %>
+		<%= image_tag("logo.png") %>
+		<%= @page_title || t('.title') %>
+	</div>
+	<div id="columns">
+		<div id="side">
+			<div id="cart">
+				<% if @cart %>
+					<%= hidden_div_if(@cart.line_items.empty?, id:"cart") do %>
+						<%= render @cart %>
+					<% end %>
+				<% end %>
+			</div>
+			
+			<ul>
+				<% if user_signed_in? %>
+					 <li><h4 style='color: #bfb'>Signed in as </br> <%= current_user.name %> </br> <%= current_user.email %> </br>
+					<%= link_to "Sign out", destroy_user_session_path, :method => :delete %></h4></li>
+				<% else %>
+					<li><%= link_to t('.signup'), new_user_registration_path %></li>
+					<li><%= link_to t('.signin'), new_user_session_path %></li>
+				<% end %>
+				<li><a href="/"><%= t('.home') %></a></li>
+				<li><a href="/brand_new"><%= t('.brandnew') %></a></li>
+				<li><a href="/editors_pick"><%= t('.editorspick') %></a></li>
+				<li><a href="/most_popular"><%= t('.mostpopular') %></a></li>
+				<li><a href="http://www.insignia4u.com/services"><%= t('.questions') %></a></li>
+				<li><a href="http://www.insignia4u.com/projects"><%= t('.news') %></a></li>
+				<li><a href="http://www.insignia4u.com/contact"><%= t('.contact') %></a></li>
+				
+		</div>
+		<div id="main">
+			<%= yield %>
+		</div>
+	</div>
+</body>
+</html>

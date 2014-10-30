@@ -1,0 +1,16 @@
+<h1>Editing user</h1>
+
+<%= render 'form' %>
+
+<%= form_for(@user) do |f| %>
+
+	<fieldset>
+	<div class="field">
+	    <%= f.label :admin, 'Admin:' %><br />
+	    <%= f.text_field :admin, size: 5 %>
+	</div>
+	</fieldset>
+<% end %>
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>
